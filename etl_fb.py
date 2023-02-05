@@ -3,7 +3,7 @@ import json
 import csv
 
 # Replace ACCESS_TOKEN with the generated access token
-ACCESS_TOKEN = "EAANmjqga4McBALpNRsqZBNTG6fDxppVPlHQWton0EocVasZCUqebjTyrilUwZB8Ky1T86ALrKcV4eTR9gv0uqTwNYOIDnn6efcVo33CEWpvie3wsy22tJXPmcA6QFAJv4QYGZCsmPMvawUHtnVP8MZCrpdklsT8SafOFc8e4XtQmCNiYN1D0XG2Apc12Qb58dKfPm9xZCMvwZDZD"
+ACCESS_TOKEN = "EAANmjqga4McBAA0Fe9YcShQlbB2v4fvkZBxZCDQASC5ZAf665ZCVzL0jbngGwdVkSNV2tAv66rNMKLswWyJLZBrD1cC00IOfad78QYt5ZCj14B8nOnwxierwIYvRxiAuaswooXAX9rkoZCX9EblVNzTmHXUDpxBmbt7h2ZA3egHAPcd5oPbeNIRdFdwH1Be4oyYr2iC0kK98QGdpYkdnMixq"
 
 # Endpoint for user location
 location_endpoint = "https://graph.facebook.com/me?fields=location&access_token=" + ACCESS_TOKEN
@@ -86,3 +86,4 @@ with open("gender.csv", "w", newline="") as gender_file:
  writer.writerow([gender_data["gender"]])
 
 print("Data written to location.csv, likes.csv, friends.csv, posts.csv and gender.csv")
+
