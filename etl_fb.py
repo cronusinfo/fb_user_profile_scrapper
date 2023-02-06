@@ -77,27 +77,23 @@ except KeyError:
     print("Friends data is not available")
 #post
 with open("posts.csv", "w", newline="") as posts_file:
- writer = csv.writer(posts_file)
- writer.writerow(["Posts"])
- try:
-    for post in posts_data.get('posts', {}).get('data', []):
-        if 'message' in post:
-            writer.writerow([post['message']])
- except KeyError:
-    print("Posts data is not available")  
-try:         
-    for post in posts_data["posts"]["data"]:
-        if "message" in post:
-            writer.writerow([post['message']])
-        else:
-            continue
-except KeyError:
-    print("Posts data is not available")
+    writer = csv.writer(posts_file)
+    writer.writerow(["Posts"])
+    try:
+        for post in posts_data.get('posts', {}).get('data', []):
+            if 'message' in post:
+                writer.writerow([post['message']])
+    except KeyError:
+        print("Posts data is not available")
 #gender
 with open("gender.csv", "w", newline="") as gender_file:
- writer = csv.writer(gender_file)
- writer.writerow(["Gender"])
- writer.writerow([gender_data["gender"]])
+    writer = csv.writer(gender_file)
+    writer.writerow(["Gender"])
+    try:
+        writer.writerow([gender_data["gender"]])
+    except KeyError:
+        print("Gender data is not available")
 
 print("Data written to location.csv, likes.csv, friends.csv, posts.csv and gender.csv")
+
 
