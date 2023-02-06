@@ -3,7 +3,7 @@ import json
 import csv
 
 # Replace ACCESS_TOKEN with the generated access token
-ACCESS_TOKEN = "EAANmjqga4McBAA0Fe9YcShQlbB2v4fvkZBxZCDQASC5ZAf665ZCVzL0jbngGwdVkSNV2tAv66rNMKLswWyJLZBrD1cC00IOfad78QYt5ZCj14B8nOnwxierwIYvRxiAuaswooXAX9rkoZCX9EblVNzTmHXUDpxBmbt7h2ZA3egHAPcd5oPbeNIRdFdwH1Be4oyYr2iC0kK98QGdpYkdnMixq"
+ACCESS_TOKEN = "EAANmjqga4McBAJy0hjUZBPHACaqR7EKRX2ZBZCAn4MjXkhl66ePp3Y8i51SINoOJO51cCsrg8VfyGZBciH23ZCAHzZBqrl8wwoMsPZBZCF0BrSEotSU0Fe5ZAnBZCXH7ZBwocVBfrPwhXrZBJiMz1qZCLyqIZBxq2OZCUxSv10F7iBzjjCKtPM4l0pX4ZBNAZANZA53n9yXvfodQtvdYyuqZCLTdDmWu3mS"
 
 # Endpoint for user location
 location_endpoint = "https://graph.facebook.com/me?fields=location&access_token=" + ACCESS_TOKEN
@@ -56,12 +56,15 @@ print("Data written to facebook_data.json")
 with open("location.csv", "w", newline="") as location_file:
  writer = csv.writer(location_file)
  writer.writerow(["Location"])
+print("Value of location_data: ", location_data)  # Add this line to print the value of location_data
 try:
     location_name = location_data["location"]["name"]
+    with open("location.csv", "w", newline="") as location_file:
+        writer = csv.writer(location_file)
+        writer.writerow(["Location"])
+        writer.writerow([location_name])
 except KeyError:
     location_name = ''
-
-writer.writerow([location_name])
 #friends
 with open("friends.csv", "w", newline="") as friends_file:
  writer = csv.writer(friends_file)
