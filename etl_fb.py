@@ -69,19 +69,30 @@ except KeyError:
 with open("friends.csv", "w", newline="") as friends_file:
  writer = csv.writer(friends_file)
  writer.writerow(["Friends"])
-for friend in friends_data["friends"]["data"]:
- writer.writerow([friend["name"]])
+try:
+    for friend in friends_data["friends"]["data"]:
+        writer.writerow([friend["name"]])
+except KeyError:
+    # Handle the error, for example by printing a message indicating that the user's friends data is not available
+    print("Friends data is not available")
 #post
 with open("posts.csv", "w", newline="") as posts_file:
  writer = csv.writer(posts_file)
  writer.writerow(["Posts"])
-for post in posts_data.get('posts', {}).get('data', []):
-    if 'message' in post:
-         writer.writerow([post['message']])
-for post in posts_data["posts"]["data"]:
-    if "message" in post:
-        writer.writerow([post['message']])
-        writer.writerow([post["message"]])
+ try:
+    for post in posts_data.get('posts', {}).get('data', []):
+        if 'message' in post:
+            writer.writerow([post['message']])
+ except KeyError:
+    print("Posts data is not available")  
+try:         
+    for post in posts_data["posts"]["data"]:
+        if "message" in post:
+            writer.writerow([post['message']])
+        else:
+            continue
+except KeyError:
+    print("Posts data is not available")
 #gender
 with open("gender.csv", "w", newline="") as gender_file:
  writer = csv.writer(gender_file)
