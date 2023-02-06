@@ -3,7 +3,7 @@ import json
 import csv
 
 # Replace ACCESS_TOKEN with the generated access token
-ACCESS_TOKEN = "EAANmjqga4McBAJy0hjUZBPHACaqR7EKRX2ZBZCAn4MjXkhl66ePp3Y8i51SINoOJO51cCsrg8VfyGZBciH23ZCAHzZBqrl8wwoMsPZBZCF0BrSEotSU0Fe5ZAnBZCXH7ZBwocVBfrPwhXrZBJiMz1qZCLyqIZBxq2OZCUxSv10F7iBzjjCKtPM4l0pX4ZBNAZANZA53n9yXvfodQtvdYyuqZCLTdDmWu3mS"
+ACCESS_TOKEN = ""
 
 # Endpoint for user location
 location_endpoint = "https://graph.facebook.com/me?fields=location&access_token=" + ACCESS_TOKEN
